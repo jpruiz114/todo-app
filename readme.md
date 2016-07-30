@@ -1,27 +1,51 @@
-# Laravel PHP Framework
+# todo app
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Chosen framework
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Laravel
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Chosen hosting
 
-## Official Documentation
+Heroku
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Automatic deployment
 
-## Contributing
+Added auto deploy from master branch into Heroku
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Issues history
 
-## Security Vulnerabilities
+### TODOAPP-006 / Enable unique user session
+ 
+Solved on feature branch *test-browser-info*
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Custom helper functions added to helper file
 
-## License
+Reference link:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+http://stackoverflow.com/questions/30804201/what-is-the-best-practice-to-create-a-custom-helper-function-in-php-laravel-5
+
+- Within your app/Http directory, create a helpers.php file and add your functions.
+- Within composer.json, in the autoload block, add "files": ["app/Http/helpers.php"].
+- Run composer dump-autoload
+
+Already merged to master
+
+### TODOAPP-001 / Create database migrations
+
+Create migration for sessions table:
+
+```
+php artisan make:migration create_sessions_table --create=sessions
+```
+
+Create migration for tasks table:
+
+```
+php artisan make:migration create_tasks_table --create=tasks
+```
+
+Run the migrations:
+
+```
+php artisan migrate
+```
