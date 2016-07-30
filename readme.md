@@ -8,6 +8,12 @@ Laravel
 
 Heroku
 
+## Chosen database
+
+MySQL
+
+Be sure to configure your .env file with a MySQL db config.
+
 ## Automatic deployment
 
 Added auto deploy from master branch into Heroku
