@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get(
+	'/test-browser-info',
+	function() {
+		$browserObj = $_SERVER;
+		print_r($browserObj);
+	}
+);
