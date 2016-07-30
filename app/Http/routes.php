@@ -18,7 +18,13 @@ Route::get('/', function () {
 Route::get(
 	'/test-browser-info',
 	function() {
-		$browserObj = $_SERVER;
-		print_r($browserObj);
+		$ip = getUserIP();
+		echo("ip" . " = " . $ip . "<br>");
+
+		$browserObj = print_r($_SERVER, true);
+		echo("browserObj" . " = " . $browserObj . "<br>");
+
+		$uniqueBrowserId = getUniqueBrowserId();
+		echo("uniqueBrowserId" . " = " . $uniqueBrowserId . "<br>");
 	}
 );
