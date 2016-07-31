@@ -4,6 +4,10 @@
 
 Laravel
 
+Useful info to start a Laravel project:
+
+https://devcenter.heroku.com/articles/getting-started-with-laravel
+
 ## Chosen hosting
 
 Heroku
@@ -67,3 +71,47 @@ php artisan make:model Session
 ```
 php artisan make:model Task
 ```
+
+### TODOAPP-003 / Create CRUD endpoints
+
+Make the controllers:
+
+```
+php artisan make:controller TaskController --resource
+```
+
+To list the current routes:
+
+```
+php artisan route:list
+```
+
+Useful link on how to have multiple route files:
+
+http://laravel-tricks.com/tricks/laravel-5-multiple-routes-files
+
+Use this add-on on Firefox to test the API locally:
+
+https://addons.mozilla.org/en-US/firefox/addon/poster/
+
+Mapping of tasks:
+
+#### GET
+- TaskController@index
+- list
+- http://192.168.33.10/todo-app/public/task
+
+#### POST
+- TaskController@store
+- create new task
+- http://192.168.33.10/todo-app/public/task
+
+#### PUT
+- TaskController@update
+- update an existing task
+- http://192.168.33.10/todo-app/public/task/{id}
+
+#### DELETE
+- TaskController@destroy
+- "delete" a task
+- http://192.168.33.10/todo-app/public/task/{id}

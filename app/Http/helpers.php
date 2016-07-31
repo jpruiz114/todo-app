@@ -40,6 +40,7 @@ function getUniqueBrowserId()
 }
 
 /**
+ * Function that generates a random string of a given length.
  * @param int $length
  * @return string
  */
