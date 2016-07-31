@@ -55,3 +55,15 @@ Run the migrations:
 ```
 php artisan migrate
 ```
+
+### TODOAPP-002 / Create models
+
+Make the models:
+
+```
+php artisan make:model Session
+```
+
+```
+php artisan make:model Task
+```
