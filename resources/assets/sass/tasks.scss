@@ -1,0 +1,31 @@
+html {
+  width: 100%;
+}
+
+body {
+  margin: 20px;
+  height: 100%;
+  width: calc(100% - 40px);
+}
+
+#wrapper {
+  text-align: center;
+  width: 100%;
+}
+
+#tasks {
+  display: inline-block;
+
+  #new-task {
+    border: solid 1px #bebebe;
+    cursor: pointer;
+    padding-left: 16px;
+
+    #task-description {
+      border: none;
+      font-size: 24px;
+      outline: none;
+      padding: 16px;
+    }
+  }
+}

@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view(
+        'tasks',
+        [
+            'appUrl' => env('APP_URL'),
+            'resourcesUrl' => env('RESOURCES_URL')
+        ]
+    );
 });

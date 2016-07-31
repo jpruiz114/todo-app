@@ -28,7 +28,7 @@ Added auto deploy from master branch into Heroku
  
 Solved on feature branch *test-browser-info*
 
-Custom helper functions added to helper file
+Custom helper functions added to helper file.
 
 Reference link:
 
@@ -115,3 +115,41 @@ Mapping of tasks:
 - TaskController@destroy
 - "delete" a task
 - http://192.168.33.10/todo-app/public/task/{id}
+
+### TODOAPP-004 / Create view
+
+Add bower to handle all the front end dependencies
+
+```
+npm install -g bower
+```
+
+Setup bower to change the default folder of the dependencies:
+
+https://laracasts.com/discuss/channels/general-discussion/laravel-5-bower
+
+http://jordijoan.me/integrating-bower-laravel/
+
+Create a bower.json file to declare the front end dependencies.
+
+Then install them:
+
+```
+bower install
+```
+
+The chosen stylesheet engine is sass
+
+To compile the sass files you can add a watcher or compile them with grunt, gulp or directly.
+
+Laravel by default has a gulpfile, but first gulp has to be added to the project:
+
+```
+npm install gulp
+```
+
+Then alter the gulpfile (gulpfile.js) to include your custom scss files and run gulp:
+
+```
+gulp
+```

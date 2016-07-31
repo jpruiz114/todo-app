@@ -1,0 +1,10 @@
+{
+  "name": "todo app",
+  "version": "1.0.0",
+  "authors": ["Jean Paul Ruiz Vallejo <jpruiz114@gmail.com>"],
+  "dependencies": {
+    "fontawesome": "*",
+    "jquery": "*",
+    "toastr": "*"
+  }
+}

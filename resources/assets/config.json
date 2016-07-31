@@ -1,0 +1,24 @@
+{
+  "config": {
+    "api": {
+      "tasks": {
+        "list-all": {
+          "endpoint": "/task",
+          "method": "GET"
+        },
+        "create-new": {
+          "endpoint": "/task",
+          "method": "POST"
+        },
+        "update": {
+          "endpoint": "/task/{id}",
+          "method": "PUT"
+        },
+        "delete": {
+          "endpoint": "/task/{id}",
+          "method": "DELETE"
+        }
+      }
+    }
+  }
+}
