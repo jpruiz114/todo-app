@@ -33,7 +33,7 @@
 
         <script type="text/javascript" src="<?php echo $resourcesUrl; ?>/assets/bower/toastr/toastr.js"></script>
 
-        <script type="text/javascript" src="<?php echo $resourcesUrl; ?>/assets/js/index.js"></script>
+        <script type="text/javascript" src="<?php echo $resourcesUrl; ?>/assets/js/dist/index.js"></script>
 
         <script type="text/javascript">
             /**

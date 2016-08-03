@@ -1,4 +1,6 @@
 var elixir = require('laravel-elixir');
+var gulp = require('gulp');
+var stripDebug = require('gulp-strip-debug');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +13,26 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.sass('app.scss');
-    mix.sass('tasks.scss');
-});
+elixir.extend(
+    'removeConsoleLogs',
+    function(message) {
+        new elixir.Task(
+            'removeConsoleLogs',
+            function() {
+                var src = 'resources/assets/js/src/*.js';
+                var dest = 'resources/assets/js/dist/';
+
+                return gulp.src(src).pipe(stripDebug()).pipe(gulp.dest(dest));
+            }
+        )
+    }
+);
+
+elixir(
+    function(mix) {
+        mix.sass('app.scss');
+        mix.sass('tasks.scss');
+
+        mix.removeConsoleLogs();
+    }
+);

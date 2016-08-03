@@ -23,4 +23,11 @@ class Task extends Model
     protected $fillable = [
         'session_id', 'description', 'completed', 'active'
     ];
+
+    /**
+     * The attributes that should be visible in arrays.
+     *
+     * @var array
+     */
+    protected $visible = ['id', 'description', 'completed'];
 }

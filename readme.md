@@ -153,3 +153,12 @@ Then alter the gulpfile (gulpfile.js) to include your custom scss files and run 
 ```
 gulp
 ```
+
+Adding gulp-strip-debug package to remove logs from javascript files:
+
+```
+npm install --save-dev gulp-strip-debug
+```
+
+https://www.npmjs.com/package/gulp-strip-debug
+

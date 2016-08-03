@@ -3,9 +3,8 @@ html {
 }
 
 body {
-  margin: 20px;
-  height: 100%;
-  width: calc(100% - 40px);
+  background-color: #f5f5f5;
+  margin: 0;
 }
 
 #wrapper {
@@ -15,17 +14,68 @@ body {
 
 #tasks {
   display: inline-block;
+  width: 500px;
+
+  h1 {
+    color: rgba(175, 47, 47, 0.15);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 100px;
+    font-weight: 100;
+    margin: 20px;
+  }
 
   #new-task {
+    background-color: #ffffff;
     border: solid 1px #bebebe;
     cursor: pointer;
     padding-left: 16px;
+    text-align: left;
 
     #task-description {
       border: none;
       font-size: 24px;
       outline: none;
       padding: 16px;
+    }
+  }
+
+  #tasks-list{
+    background-color: #FFFFFF;
+    border: solid 1px #bebebe;
+    border-bottom: none;
+    border-top: none;
+    margin-bottom: 40px;
+    text-align: left;
+
+    .listed-task {
+      border-bottom: 1px solid #bebebe;
+      padding: 16px;
+
+      i {
+        cursor: pointer;
+      }
+
+      .task-description {
+        font-size: 24px;
+      }
+
+      label.task-description {
+        padding-left: 16px;
+      }
+
+      .completed {
+        text-decoration: line-through;
+      }
+
+      input.task-description {
+        border: none;
+        display: none;
+        margin-left: 16px;
+      }
+
+      .fa-times {
+        float: right;
+      }
     }
   }
 }

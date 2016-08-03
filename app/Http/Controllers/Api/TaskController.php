@@ -22,7 +22,7 @@ class TaskController extends Controller
     {
         $session = Session::where('hash', getUniqueBrowserId())->first();
 
-        $taskList = Task::where('session_id', $session->id)->get();
+        $taskList = Task::where('session_id', $session->id)->where('active', 1)->get();
 
         return $taskList;
     }
@@ -53,6 +53,8 @@ class TaskController extends Controller
         $task->description = $request->input('description');
 
         $task->save();
+
+        $task = Task::find($task->id);
 
         return response($task, 201)->header('Content-Type', 'application/json');;
     }
