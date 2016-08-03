@@ -28,13 +28,13 @@ body {
       border: none;
       font-size: 24px;
       outline: none;
-      padding: 16px; }
+      padding: 16px;
+      width: 88%; }
   #tasks #tasks-list {
     background-color: #FFFFFF;
     border: solid 1px #bebebe;
     border-bottom: none;
     border-top: none;
-    margin-bottom: 40px;
     text-align: left; }
     #tasks #tasks-list .listed-task {
       border-bottom: 1px solid #bebebe;
@@ -53,5 +53,23 @@ body {
         margin-left: 16px; }
       #tasks #tasks-list .listed-task .fa-times {
         float: right; }
+  #tasks #tasks-info {
+    background: #FFFFFF;
+    border: solid 1px #bebebe;
+    border-top: none;
+    display: none;
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px; }
+    #tasks #tasks-info #tasks-info-l {
+      display: inline-block;
+      width: 25%; }
+    #tasks #tasks-info #tasks-info-c {
+      display: inline-block;
+      width: 48%; }
+    #tasks #tasks-info #tasks-info-r {
+      display: inline-block;
+      width: 25%; }
 
 /*# sourceMappingURL=tasks.css.map */

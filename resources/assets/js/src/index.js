@@ -99,6 +99,10 @@ var app = {
                     app.addTaskToList(id, description, completed);
                 }
 
+                app.setItemsLeft();
+
+                $("#tasks-info").show();
+
                 app.bindEvents(app.bindEventsCallback);
             }
         });
@@ -113,30 +117,39 @@ var app = {
                 console.log("taskCheckClick");
 
                 var parent = $(this).parent();
+                console.dir(parent);
 
-                var id = $(parent).data("task-id");
+                var id = $(parent).attr("data-task-id");
+                console.log("id" + " = " + id);
+
                 var description = $(parent).find("input.task-description").val();
-                var completed = $(parent).data("task-completed");
+                console.log("description" + " = " + description);
+
+                var completed = $(parent).attr("data-task-completed");
+                console.log("completed" + " = " + completed);
 
                 var icon = $(parent).find("i.task-check");
 
-                if (completed) {
-                    $(icon).removeClass("fa-check-square-o");
-                    $(icon).addClass("fa-square-o");
-
-                    $(parent).data("task-completed", 0);
-
-                    $(parent).find("label.task-description").removeClass("completed");
-                } else {
+                if (completed == "0") {
                     $(icon).removeClass("fa-square-o");
                     $(icon).addClass("fa-check-square-o");
 
-                    $(parent).data("task-completed", 1);
+                    $(parent).attr("data-task-completed", "1");
 
                     $(parent).find("label.task-description").addClass("completed");
                 }
 
-                completed = $(parent).data("task-completed");
+                if (completed == "1") {
+                    $(icon).removeClass("fa-check-square-o");
+                    $(icon).addClass("fa-square-o");
+
+                    $(parent).attr("data-task-completed", "0");
+
+                    $(parent).find("label.task-description").removeClass("completed");
+                }
+
+                completed = $(parent).attr("data-task-completed");
+                console.log("completed" + " = " + completed);
 
                 app.editExistingTask(id, description, completed);
             }
@@ -170,12 +183,12 @@ var app = {
                 if (e.keyCode == 13) {
                     var parent = $(this).parent();
 
-                    var id = $(parent).data("task-id");
+                    var id = $(parent).attr("data-task-id");
 
                     var description = $(this).val();
                     $(parent).find("label.task-description").text(description);
 
-                    var completed = $(parent).data("task-completed");
+                    var completed = $(parent).attr("data-task-completed");
 
                     $(this).hide();
                     $(parent).find("label.task-description").show();
@@ -203,7 +216,7 @@ var app = {
 
                 var parent = $(this).parent();
 
-                var id = $(parent).data("task-id");
+                var id = $(parent).attr("data-task-id");
 
                 app.removeTask(id);
             }
@@ -266,6 +279,26 @@ var app = {
 
     /**
      *
+     */
+    setItemsLeft: function() {
+        console.log("setItemsLeft");
+
+        var itemsLeft = $("#tasks-list").find("[data-task-completed='0']").length;
+        console.log("itemsLeft" + " = " + itemsLeft);
+
+        var message = "";
+
+        if (itemsLeft == 1) {
+            message = "1 item left";
+        } else {
+            message = itemsLeft + " items left";
+        }
+
+        $("#items-left").text(message);
+    },
+
+    /**
+     *
      * @param description
      */
     addTaskToList: function(id, description, completed) {
@@ -304,6 +337,8 @@ var app = {
             "slow",
             function() {
                 $(this).remove();
+
+                app.setItemsLeft();
             }
         );
     },
@@ -351,6 +386,8 @@ var app = {
                 app.unbindEventsTaskRemove();
                 app.bindEventsTaskRemove();
 
+                app.setItemsLeft();
+
                 toastr.success("Task created");
             }
         });
@@ -382,6 +419,8 @@ var app = {
                 console.log("ok");
 
                 toastr.success("Task updated");
+
+                app.setItemsLeft();
             }
         });
     },

@@ -36,6 +36,7 @@ body {
       font-size: 24px;
       outline: none;
       padding: 16px;
+      width: 88%;
     }
   }
 
@@ -44,7 +45,6 @@ body {
     border: solid 1px #bebebe;
     border-bottom: none;
     border-top: none;
-    margin-bottom: 40px;
     text-align: left;
 
     .listed-task {
@@ -76,6 +76,32 @@ body {
       .fa-times {
         float: right;
       }
+    }
+  }
+
+  #tasks-info {
+    background: #FFFFFF;
+    border: solid 1px #bebebe;
+    border-top: none;
+    display: none;
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    #tasks-info-l {
+      display: inline-block;
+      width: 25%;
+    }
+
+    #tasks-info-c {
+      display: inline-block;
+      width: 48%;
+    }
+
+    #tasks-info-r {
+      display: inline-block;
+      width: 25%;
     }
   }
 }

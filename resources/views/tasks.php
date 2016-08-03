@@ -26,6 +26,22 @@
                 <div id="tasks-list">
 
                 </div>
+
+                <div id="tasks-info">
+                    <div id="tasks-info-l">
+                        <label id="items-left"></label>
+                    </div>
+
+                    <div id="tasks-info-c">
+                        <a>All</a>
+                        <a>Active</a>
+                        <a>Completed</a>
+                    </div>
+
+                    <div id="tasks-info-r">
+                        <a>Clear completed</a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -33,7 +49,7 @@
 
         <script type="text/javascript" src="<?php echo $resourcesUrl; ?>/assets/bower/toastr/toastr.js"></script>
 
-        <script type="text/javascript" src="<?php echo $resourcesUrl; ?>/assets/js/dist/index.js"></script>
+        <script type="text/javascript" src="<?php echo $resourcesUrl; ?>/assets/js/src/index.js"></script>
 
         <script type="text/javascript">
             /**
