@@ -20,7 +20,7 @@
                 <div id="new-task">
                     <i id="clear-all-tasks" class="fa fa-check" aria-hidden="true"></i>
 
-                    <input id="task-description" placeholder="What needs to be done?" type="text" />
+                    <input id="task-description" maxlength="100" placeholder="What needs to be done?" type="text" />
                 </div>
 
                 <div id="tasks-list">

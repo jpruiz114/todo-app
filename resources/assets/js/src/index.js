@@ -286,7 +286,7 @@ var app = {
         }
 
         html += "<label class='" + labelClass + "'>" + description + "</label>";
-        html += "<input class='task-description' type='text' value='" + description + "' />";
+        html += "<input class='task-description' maxlength='100' type='text' value='" + description + "' />";
 
         html += "<i class='task-remove fa fa-times' aria-hidden='true'></i>";
 
