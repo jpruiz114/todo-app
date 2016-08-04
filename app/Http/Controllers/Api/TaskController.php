@@ -20,7 +20,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $session = Session::where('hash', getUniqueBrowserId())->first();
+        $session = Session::firstOrCreate(array('hash' => getUniqueBrowserId()));
 
         $taskList = Task::where('session_id', $session->id)->where('active', 1)->where('cleared', 0)->get();
 
