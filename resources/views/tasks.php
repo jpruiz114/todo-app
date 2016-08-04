@@ -5,11 +5,11 @@
 
         <title>todo app</title>
 
-        <link rel="stylesheet" href="<?php echo $resourcesUrl; ?>/assets/bower/fontawesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="bower/fontawesome/css/font-awesome.min.css">
 
-        <link rel="stylesheet" href="<?php echo $resourcesUrl; ?>/assets/bower/toastr/toastr.min.css">
+        <link rel="stylesheet" href="bower/toastr/toastr.min.css">
 
-        <link rel="stylesheet" href="<?php echo $appUrl; ?>/css/tasks.css">
+        <link rel="stylesheet" href="css/tasks.css">
     </head>
 
     <body>
@@ -45,11 +45,11 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="<?php echo $resourcesUrl; ?>/assets/bower/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bower/jquery/dist/jquery.min.js"></script>
 
-        <script type="text/javascript" src="<?php echo $resourcesUrl; ?>/assets/bower/toastr/toastr.js"></script>
+        <script type="text/javascript" src="bower/toastr/toastr.js"></script>
 
-        <script type="text/javascript" src="<?php echo $resourcesUrl; ?>/assets/js/dist/index.js"></script>
+        <script type="text/javascript" src="js/dist/index.js"></script>
 
         <script type="text/javascript">
             /**
@@ -58,7 +58,7 @@
             $(window).on(
                 'load',
                 function() {
-                    app.initialize('<?php echo $appUrl; ?>', '<?php echo $resourcesUrl; ?>');
+                    app.initialize('<?php echo $appUrl; ?>');
                 }
             );
         </script>

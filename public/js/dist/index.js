@@ -7,20 +7,13 @@ var app = {
     /**
      *
      */
-    resourcesUrl: null,
-
-    /**
-     *
-     */
     apiConfig: null,
 
     /**
      * Method that initializes the app.
      */
-    initialize: function(appUrl, resourcesUrl) {
+    initialize: function(appUrl) {
         app.appUrl = appUrl;
-
-        app.resourcesUrl = resourcesUrl;
 
         app.loadConfig(app.loadConfigCallback);
     },
@@ -33,7 +26,7 @@ var app = {
         $.ajax({
             async: false,
             global: false,
-            url: app.resourcesUrl + "/assets/config.json",
+            url: app.appUrl + "/config.json",
             dataType: "json",
             error: function () {
                 // @todo

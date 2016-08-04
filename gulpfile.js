@@ -19,8 +19,8 @@ elixir.extend(
         new elixir.Task(
             'removeConsoleLogs',
             function() {
-                var src = 'resources/assets/js/src/*.js';
-                var dest = 'resources/assets/js/dist/';
+                var src = 'public/js/src/*.js';
+                var dest = 'public/js/dist/';
 
                 return gulp.src(src).pipe(stripDebug()).pipe(gulp.dest(dest));
             }
