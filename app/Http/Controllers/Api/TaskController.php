@@ -22,7 +22,7 @@ class TaskController extends Controller
     {
         $session = Session::where('hash', getUniqueBrowserId())->first();
 
-        $taskList = Task::where('session_id', $session->id)->where('active', 1)->get();
+        $taskList = Task::where('session_id', $session->id)->where('active', 1)->where('cleared', 0)->get();
 
         return $taskList;
     }

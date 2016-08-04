@@ -501,7 +501,7 @@ var app = {
      */
     showActive: function() {
         console.log("showActive");
-        
+
         // Hide the completed
         $("#tasks-list").find("[data-task-completed='1']").hide();
 
@@ -528,6 +528,28 @@ var app = {
     clearCompleted: function() {
         console.log("clearCompleted");
 
+        var endpointConfig = app.apiConfig.tasks["clear-completed"];
 
+        var path = endpointConfig["endpoint"];
+        var method = endpointConfig["method"];
+
+        jQuery.ajax({
+            type: method,
+            url: app.appUrl + "/" + path,
+            data: {},
+            dataType: "text",
+            error: function (jqXHR, status) {
+                console.log("error");
+
+                // @todo
+            },
+            success: function (data, status, jqXHR) {
+                console.log("ok");
+
+                $("#tasks-list").find("[data-task-completed='1']").remove();
+
+                toastr.success("Completed tasks cleared");
+            }
+        });
     }
 };

@@ -3,20 +3,24 @@
     "api": {
       "tasks": {
         "list-all": {
-          "endpoint": "/task",
+          "endpoint": "task",
           "method": "GET"
         },
         "create-new": {
-          "endpoint": "/task",
+          "endpoint": "task",
           "method": "POST"
         },
         "update": {
-          "endpoint": "/task/{id}",
+          "endpoint": "task/{id}",
           "method": "PUT"
         },
         "delete": {
-          "endpoint": "/task/{id}",
+          "endpoint": "task/{id}",
           "method": "DELETE"
+        },
+        "clear-completed": {
+          "endpoint": "tasks/clear-completed",
+          "method": "PUT"
         }
       }
     }

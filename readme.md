@@ -162,3 +162,14 @@ npm install --save-dev gulp-strip-debug
 
 https://www.npmjs.com/package/gulp-strip-debug
 
+Add an extra field to the tasks table to add a cleared field:
+
+```
+php artisan make:migration add_cleared_field_tasks_table
+```
+
+Run the migrations:
+
+```
+php artisan migrate
+```
