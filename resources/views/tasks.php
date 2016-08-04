@@ -33,13 +33,13 @@
                     </div>
 
                     <div id="tasks-info-c">
-                        <a>All</a>
-                        <a>Active</a>
-                        <a>Completed</a>
+                        <a href="#" id="show-all">All</a>
+                        <a href="#" id="show-active">Active</a>
+                        <a href="#" id="show-completed">Completed</a>
                     </div>
 
                     <div id="tasks-info-r">
-                        <a>Clear completed</a>
+                        <a href="#" id="clear-completed">Clear completed</a>
                     </div>
                 </div>
             </div>

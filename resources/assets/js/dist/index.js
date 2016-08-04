@@ -263,6 +263,38 @@ var app = {
 
         app.bindEventsTaskRemove();
 
+        $("#show-all").click(
+            function(e)	{
+                app.showAll();
+
+                e.preventDefault();
+            }
+        );
+
+        $("#show-active").click(
+            function(e)	{
+                app.showActive();
+
+                e.preventDefault();
+            }
+        );
+
+        $("#show-completed").click(
+            function(e)	{
+                app.showCompleted();
+
+                e.preventDefault();
+            }
+        );
+
+        $("#clear-completed").click(
+            function(e)	{
+                app.clearCompleted();
+
+                e.preventDefault();
+            }
+        );
+
         if (callback) {
             callback();
         }
@@ -453,5 +485,49 @@ var app = {
                 toastr.success("Task deleted");
             }
         });
+    },
+
+    /**
+     *
+     */
+    showAll: function() {
+        void 0;
+
+        $(".listed-task").show();
+    },
+
+    /**
+     *
+     */
+    showActive: function() {
+        void 0;
+        
+        // Hide the completed
+        $("#tasks-list").find("[data-task-completed='1']").hide();
+
+        // Show the active
+        $("#tasks-list").find("[data-task-completed='0']").show();
+    },
+
+    /**
+     *
+     */
+    showCompleted: function() {
+        void 0;
+
+        // Hide the active
+        $("#tasks-list").find("[data-task-completed='0']").hide();
+
+        // Show the completed
+        $("#tasks-list").find("[data-task-completed='1']").show();
+    },
+
+    /**
+     *
+     */
+    clearCompleted: function() {
+        void 0;
+
+
     }
 };
