@@ -25,6 +25,13 @@ Route::get(
     }
 );
 
+Route::get(
+    '/phpinfo',
+    function() {
+        phpinfo();
+    }
+);
+
 use App\Session;
 use App\Task;
 
